@@ -1,43 +1,132 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Limpa Nome KMA - Atendimento Online</title>
 
-on:
-  # Runs on pushes targeting the default branch
-  push:
-    branches: ["main"]
+<style>
+    * { box-sizing: border-box; margin: 0; padding: 0;}
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: radial-gradient(circle at top, #1a237e, #0b102f 45%, #050712 100%);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 10px;
+        color: #f5f5f5;
+    }
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+    header {
+        width: 100%;
+        max-width: 520px;
+        text-align: center;
+        margin-bottom: 15px;
+    }
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+    header h1 {
+        font-size: 24px;
+        font-weight: bold;
+        color: #58a6ff;
+        margin-bottom: 8px;
+    }
 
-jobs:
-  # Single deploy job since we're just deploying
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          # Upload entire repository
-          path: '.'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+    .caixa {
+        width: 100%;
+        max-width: 520px;
+        background: rgba(255, 255, 255, 0.05);
+        padding: 18px;
+        border-radius: 10px;
+        backdrop-filter: blur(4px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        margin-bottom: 15px;
+    }
+
+    label {
+        font-size: 15px;
+        display: block;
+        margin-bottom: 6px;
+    }
+
+    input {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        border: none;
+        outline: none;
+        margin-bottom: 10px;
+        font-size: 15px;
+    }
+
+    button {
+        width: 100%;
+        background: #0d6efd;
+        border: none;
+        padding: 14px;
+        border-radius: 8px;
+        margin-top: 10px;
+        font-size: 16px;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #0b5ed7;
+    }
+
+    .whatsapp {
+        margin-top: 15px;
+        display: block;
+        width: 100%;
+        background: #25d366;
+        padding: 14px;
+        border-radius: 8px;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
+    }
+
+    footer {
+        margin-top: 20px;
+        font-size: 13px;
+        color: #ccc;
+        text-align: center;
+        opacity: 0.8;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Limpa Nome KMA</h1>
+    <p>Atendimento Rápido • Consulta Instantânea</p>
+</header>
+
+<div class="caixa">
+    <label>Nome Completo</label>
+    <input type="text" placeholder="Digite seu nome...">
+
+    <label>CPF</label>
+    <input type="number" placeholder="Digite seu CPF...">
+
+    <button>CONSULTAR SITUAÇÃO</button>
+
+    <a class="whatsapp"
+       href="https://wa.me/5548996453080?text=Olá,%20quero%20fazer%20meu%20*Limpa%20Nome%20KMA*."
+       target="_blank">
+       Falar no WhatsApp
+    </a>
+</div>
+
+<footer>
+    © 2025 • Sistema Limpa Nome KMA • Atendimento Online
+</footer>
+
+</body>
+</html>
